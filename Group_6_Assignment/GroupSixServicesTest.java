@@ -30,6 +30,16 @@ class GroupSixServicesTest {
 	        manager.deleteGuestRecord(1);
 	        assertEquals("Guest not found", manager.readGuestRecord(1));
 	    }
+	    @Test
+	      void testIsArmstrongNumber() {
+	          // Test case for an Armstrong number
+	          assertTrue(GroupSixServices.isArmstrongNumber(153));
 
+	          // Test case for a non-Armstrong number
+	          assertFalse(GroupSixServices.isArmstrongNumber(123));
+
+	          // Additional test cases can be added here
+	      
 }
 
+}

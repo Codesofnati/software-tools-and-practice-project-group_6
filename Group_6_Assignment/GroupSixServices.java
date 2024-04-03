@@ -37,6 +37,19 @@ public class GroupSixServices {
         }
     }
 
+    public static boolean isArmstrongNumber(int number) {
+        int originalNumber, remainder, result = 0;
+        originalNumber = number;
+
+        while (originalNumber != 0) {
+            remainder = originalNumber % 10;
+            result += Math.pow(remainder, 3);
+            originalNumber /= 10;
+        }
+
+        return result == number;
+    }
+
     public static void main(String[] args) {
         GroupSixServices manager = new GroupSixServices();
         Scanner scanner = new Scanner(System.in);
@@ -120,7 +133,17 @@ public class GroupSixServices {
                 	break;
                 	
                 	
-                case 4: 
+                case 4:
+
+                    
+                    System.out.print("Enter Any Number: ");// Change this number to check for different numbers
+
+                    int number=scanner.nextInt();
+                      if(isArmstrongNumber(number)) {
+                          System.out.println(number + " is an Armstrong number.");
+                      } else {
+                          System.out.println(number + " is not an Armstrong number.");
+                      }
                 	
                 	break; 
                 case 5:
