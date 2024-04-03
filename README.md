@@ -1,7 +1,7 @@
 # software-tools-and-practice-project-group_6
  This is Software Tools and Practice Group Assignment 
  
- # Group Members              Id
+ # Group Members              
  1, Getahun Tamirat       1301372
  2, Geleta Bekele         1301323
  3, Thomas Tesema         1302870
