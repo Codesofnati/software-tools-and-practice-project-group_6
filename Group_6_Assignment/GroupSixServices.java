@@ -1,13 +1,12 @@
+
 package Group_6_Assignment;
 
 
 
 import java.util.HashMap;
 import java.util.Map;
-
 import java.util.Scanner;
 
-import Group_6_Assignment.GroupSixServices;
 
 public class GroupSixServices {
   
@@ -87,7 +86,7 @@ public class GroupSixServices {
 
                             case 1:
 
-                                System.out.print("\nNumber of People: ");
+System.out.print("\nNumber of People: ");
                                 choice = scanner.nextInt();
                                 // Create a guest record
                                 for (int i = 0; i < choice; i++) {
@@ -129,11 +128,28 @@ public class GroupSixServices {
                     break;
                     
                 case 3:
-                	
-                	break;
-                	
-                	
-                case 4:
+
+
+                  Scanner scannerr = new Scanner(System.in);
+
+                    System.out.println("Enter a paragraph:");
+                    String paragraph = scannerr.nextLine();
+
+                    System.out.println("Enter the word you want to search for:");
+                   
+                    String word = scannerr.next();
+
+                    if (paragraph.contains(word)) {
+                        System.out.println("The word '" + word + "' was found in the paragraph.");
+                    } else {
+                        System.out.println("The word '" + word + "' was not found in the paragraph.");
+                    }
+                 
+                  break;
+                  
+                  
+                case 4: 
+            
 
                     
                     System.out.print("Enter Any Number: ");// Change this number to check for different numbers
@@ -146,8 +162,9 @@ public class GroupSixServices {
                       }
                 	
                 	break; 
+             
                 case 5:
-                	
+                  
             }
 
         }while (choice!=0);
