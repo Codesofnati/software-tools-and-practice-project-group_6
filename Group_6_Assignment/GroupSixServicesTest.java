@@ -53,4 +53,26 @@ class GroupSixServicesTest {
 
           // Additional test cases can be added here
     }
+    
+    
+    @Test
+    public void testTranslateToPigLatinStartingWithVowel() {
+        String translated = HotelGuestRecordManager.translateToPigLatin("apple");
+        assertEquals("appleway", translated);
+    }
+
+    @Test
+    public void testTranslateToPigLatinStartingWithConsonant() {
+        String translated = HotelGuestRecordManager.translateToPigLatin("hello");
+        assertEquals("ellohay", translated);
+    }
+    @Test
+    public void testIsVowel() {
+        boolean result1 = HotelGuestRecordManager.isVowel('a');
+        boolean result2 = HotelGuestRecordManager.isVowel('b');
+
+        assertEquals(true, result1);
+        assertEquals(false, result2);
+    }
+    
 }

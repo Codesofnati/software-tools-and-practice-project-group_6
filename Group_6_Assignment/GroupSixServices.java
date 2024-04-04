@@ -10,6 +10,20 @@ import java.util.Scanner;
 
 public class GroupSixServices {
   
+   
+    
+    public static String translateToPigLatin(String word) {
+        char firstLetter = word.charAt(0);
+        if (isVowel(firstLetter)) {
+            return word + "way";
+        } else {
+            return word.substring(1) + firstLetter + "ay";
+        }
+    }
+
+    public static boolean isVowel(char letter) {
+        return "aeiouAEIOU".indexOf(letter) != -1;
+    }
     private static Map<Integer, String> guestRecords = new HashMap<>();
 
     public void createGuestRecord(int id, String name) {
@@ -68,7 +82,20 @@ public class GroupSixServices {
             switch (choice) {
 
                 case 1:
+                
+                Scanner scann = new Scanner(System.in);
 
+
+                System.out.println("Welcome to the Pig Latin Translator!");
+                System.out.println("Enter a sentence to translate to Pig Latin:");
+
+                String input = scann.nextLine();
+                String[] words = input.split(" ");
+
+                System.out.println("Translated to Pig Latin:");
+                for (String word : words) {
+                    System.out.print(translateToPigLatin(word) + " ");
+                }
                 
                     break;
 
