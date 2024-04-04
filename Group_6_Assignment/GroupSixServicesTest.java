@@ -27,7 +27,7 @@ class GroupSixServicesTest {
 	    	GroupSixServices manager = new GroupSixServices();
 	        manager.createGuestRecord(1, "Abebe Mare");
 	        manager.deleteGuestRecord(1);
-	        assertEquals("Guest not found", manager.readGuestRecord(1));
+	        assertEquals("Guest not  found", manager.readGuestRecord(1));
 	    }
 	    
       @Test
