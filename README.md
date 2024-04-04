@@ -8,7 +8,7 @@
  |---|---|---|
  |Getahun Tamirat|1301372|Getahun08|
  |Geleta Bekele|1301323|GeletaBekele|
- |Thomas Tesema|1302870|tom|
+ |Thomas Tesema|1302870|thomastese|
  |Natinael Asefa|1302348|Codesofnati|
  |Mastewal Tilaye|1302001|matewalmas|
  |Yonatan Berihanie|1303121|Yonatan-Birhanie|
