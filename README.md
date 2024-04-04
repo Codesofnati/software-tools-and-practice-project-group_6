@@ -4,14 +4,14 @@
 
 
  ### This Project Done By Following Members 
- |Group Members|Id|
- |---|---|
- |Getahun Tamirat|1301372|
- |Geleta Bekele|1301323|
- |Thomas Tesema|1302870|
- |Natinael Asefa|1302348|
- |Mastewal Tilaye|1302001|
- |Yonatan Berihanie|1303121|
+ |Group Members|Id|UserName|
+ |---|---|---|
+ |Getahun Tamirat|1301372|Getahun08|
+ |Geleta Bekele|1301323|GeletaBekele|
+ |Thomas Tesema|1302870|tom|
+ |Natinael Asefa|1302348|Codesofnati|
+ |Mastewal Tilaye|1302001|matewalmas|
+ |Yonatan Berihanie|1303121|Yonatan-Birhanie|
 
  
 # Armestrong Numbers
