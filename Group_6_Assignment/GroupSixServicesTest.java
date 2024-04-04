@@ -76,8 +76,28 @@ class GroupSixServicesTest {
         assertEquals(true, result1);
         assertEquals(false, result2);
     }
-    
+    private LinkShortener linkShortener;
 
+    @BeforeEach
+    void setUp() {
+        linkShortener = new LinkShortener();
+    }
+
+    @Test
+    void testShortenAndExpand() {
+        String longUrl = "https://www.example.com";
+        String shortUrl = linkShortener.shorten(longUrl);
+
+        assertEquals(longUrl, linkShortener.expand(shortUrl));
+    }
+
+    @Test
+    void testExpandNonexistentShortUrl() {
+        String nonexistentShortUrl = "nonexistent";
+        String expectedMessage = "Short URL not found.";
+
+        assertEquals(expectedMessage, linkShortener.expand(nonexistentShortUrl));
+    } 
 
     
 }
