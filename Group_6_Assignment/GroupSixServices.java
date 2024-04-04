@@ -238,7 +238,7 @@ System.out.print("\nNumber of People: ");
 
                     String expandedUrl = linkShortener.expand(shortUrl);
                     System.out.println("Expanded URL: " + expandedUrl);
-           
+           break;
                   
             }
 
