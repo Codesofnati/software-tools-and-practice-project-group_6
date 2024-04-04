@@ -64,29 +64,6 @@ public class GroupSixServices {
         return result == number;
     }
 
-    public static class LinkShortener {
-        private Map<String, String> shortToLong = new HashMap<>();
-        private Map<String, String> longToShort = new HashMap<>();
-
-        public String shorten(String longUrl) {
-            if (longToShort.containsKey(longUrl)) {
-                return longToShort.get(longUrl);
-            }
-
-            String shortUrl = generateShortUrl();
-            shortToLong.put(shortUrl, longUrl);
-            longToShort.put(longUrl, shortUrl);
-            return shortUrl;
-        }
-
-        public String expand(String shortUrl) {
-            return shortToLong.getOrDefault(shortUrl, "Short URL not found.");
-        }
-
-        private String generateShortUrl() {
-            // Generate a random short URL
-            return "shorturl" + (int)(Math.random() * 1000);
-        }
 
         public static String expandLink(String shortLink) {
             // TODO Auto-generated method stub
@@ -97,7 +74,7 @@ public class GroupSixServices {
             // TODO Auto-generated method stub
             return null;
         }
-    }
+    
         public static void main(String[] args) {
         GroupSixServices manager = new GroupSixServices();
         Scanner scanner = new Scanner(System.in);
@@ -230,15 +207,6 @@ System.out.print("\nNumber of People: ");
              
                 case 5:
 
-                    LinkShortener linkShortener = new LinkShortener();
-
-                    String longUrl = "https://www.google.com";
-                    String shortUrl = linkShortener.shorten(longUrl);
-                    System.out.println("Shortened URL: " + shortUrl);
-
-                    String expandedUrl = linkShortener.expand(shortUrl);
-                    System.out.println("Expanded URL: " + expandedUrl);
-           break;
                   
             }
 
