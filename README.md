@@ -6,12 +6,12 @@
  ### This Project Done By Following Members 
  |Group Members|Id|UserName|
  |---|---|---|
- |Getahun Tamirat|1301372|Getahun08|
- |Geleta Bekele|1301323|GeletaBekele|
- |Thomas Tesema|1302870|thomastese|
- |Natinael Asefa|1302348|Codesofnati|
- |Mastewal Tilaye|1302001|matewalmas|
- |Yonatan Berihanie|1303121|Yonatan-Birhanie|
+ |Getahun Tamirat|1301372|[@Getahun08](https://github.com/Getahun08)|
+ |Geleta Bekele|1301323|[@GeletaBekele](https://github.com/GeletaBekele)|
+ |Thomas Tesema|1302870|[@thomastese](https://github.com/thomastese)|
+ |Natinael Asefa|1302348|[@Codesofnati](https://github.com/Codesofnati)|
+ |Mastewal Tilaye|1302001|[@matewalmas](https://github.com/matewalmas)|
+ |Yonatan Berihanie|1303121|[@Yonatan-Birhanie](https://github.com/Yonatan-Birhanie)|
 
  
 # Armestrong Numbers
