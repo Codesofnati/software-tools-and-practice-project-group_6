@@ -53,36 +53,59 @@ class GroupSixServicesTest {
 
           // Additional test cases can be added here
     }
-}  @Test
-void testShortenUrl() {
-    LinkShortener linkShortener = new LinkShortener();
+} 
+    @Test
+    public void testTranslateToPigLatinStartingWithVowel() {
+        String translated = HotelGuestRecordManager.translateToPigLatin("apple");
+        assertEquals("appleway", translated);
+    }
 
-    // Test case for a valid URL
-    String originalUrl = "https://www.example.com";
-    String shortUrl = linkShortener.shortenUrl(originalUrl);
-    assertNotNull(shortUrl);
-    assertNotEquals(originalUrl, shortUrl);
+    @Test
+    public void testTranslateToPigLatinStartingWithConsonant() {
+        String translated = HotelGuestRecordManager.translateToPigLatin("hello");
+        assertEquals("ellohay", translated);
+    }
+    @Test
+    public void testIsVowel() {
+        boolean result1 = HotelGuestRecordManager.isVowel('a');
+        boolean result2 = HotelGuestRecordManager.isVowel('b');
 
-    // Test case for an empty URL
-    String emptyUrl = "";
-    assertThrows(IllegalArgumentException.class, () -> linkShortener.shortenUrl(emptyUrl));
+        assertEquals(true, result1);
+        assertEquals(false, result2);
+    }
+    
+    @Test
+    void testShortenUrl() {
+        LinkShortener linkShortener = new LinkShortener();
 
-    // Additional test cases can be added here
-}
+        // Test case for a valid URL
+        String originalUrl = "https://www.example.com";
+        String shortUrl = linkShortener.shortenUrl(originalUrl);
+        assertNotNull(shortUrl);
+        assertNotEquals(originalUrl, shortUrl);
 
-@Test
-void testExpandUrl() {
-    LinkShortener linkShortener = new LinkShortener();
+        // Test case for an empty URL
+        String emptyUrl = "";
+        assertThrows(IllegalArgumentException.class, () -> linkShortener.shortenUrl(emptyUrl));
 
-    // Test case for expanding a shortened URL
-    String originalUrl = "https://www.example.com";
-    String shortUrl = linkShortener.shortenUrl(originalUrl);
-    String expandedUrl = linkShortener.expandUrl(shortUrl);
-    assertEquals(originalUrl, expandedUrl);
+        // Additional test cases can be added here
+    }
 
-    // Test case for expanding an invalid shortened URL
-    String invalidShortUrl = "invalid-short-url";
-    assertThrows(IllegalArgumentException.class, () -> linkShortener.expandUrl(invalidShortUrl));
+    @Test
+    void testExpandUrl() {
+        LinkShortener linkShortener = new LinkShortener();
 
-    // Additional test cases can be added here
+        // Test case for expanding a shortened URL
+        String originalUrl = "https://www.example.com";
+        String shortUrl = linkShortener.shortenUrl(originalUrl);
+        String expandedUrl = linkShortener.expandUrl(shortUrl);
+        assertEquals(originalUrl, expandedUrl);
+
+        // Test case for expanding an invalid shortened URL
+        String invalidShortUrl = "invalid-short-url";
+        assertThrows(IllegalArgumentException.class, () -> linkShortener.expandUrl(invalidShortUrl));
+
+        // Additional test cases can be adde
+        
+        
 }
