@@ -53,4 +53,36 @@ class GroupSixServicesTest {
 
           // Additional test cases can be added here
     }
+}  @Test
+void testShortenUrl() {
+    LinkShortener linkShortener = new LinkShortener();
+
+    // Test case for a valid URL
+    String originalUrl = "https://www.example.com";
+    String shortUrl = linkShortener.shortenUrl(originalUrl);
+    assertNotNull(shortUrl);
+    assertNotEquals(originalUrl, shortUrl);
+
+    // Test case for an empty URL
+    String emptyUrl = "";
+    assertThrows(IllegalArgumentException.class, () -> linkShortener.shortenUrl(emptyUrl));
+
+    // Additional test cases can be added here
+}
+
+@Test
+void testExpandUrl() {
+    LinkShortener linkShortener = new LinkShortener();
+
+    // Test case for expanding a shortened URL
+    String originalUrl = "https://www.example.com";
+    String shortUrl = linkShortener.shortenUrl(originalUrl);
+    String expandedUrl = linkShortener.expandUrl(shortUrl);
+    assertEquals(originalUrl, expandedUrl);
+
+    // Test case for expanding an invalid shortened URL
+    String invalidShortUrl = "invalid-short-url";
+    assertThrows(IllegalArgumentException.class, () -> linkShortener.expandUrl(invalidShortUrl));
+
+    // Additional test cases can be added here
 }
