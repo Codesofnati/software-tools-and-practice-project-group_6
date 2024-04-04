@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 
+
 public class GroupSixServices {
   
    
@@ -62,7 +63,8 @@ public class GroupSixServices {
 
         return result == number;
     }
-    public class LinkShortener {
+
+    public static class LinkShortener {
         private Map<String, String> shortToLong = new HashMap<>();
         private Map<String, String> longToShort = new HashMap<>();
 
@@ -76,6 +78,7 @@ public class GroupSixServices {
             longToShort.put(longUrl, shortUrl);
             return shortUrl;
         }
+
         public String expand(String shortUrl) {
             return shortToLong.getOrDefault(shortUrl, "Short URL not found.");
         }
@@ -85,7 +88,16 @@ public class GroupSixServices {
             return "shorturl" + (int)(Math.random() * 1000);
         }
 
+        public static String expandLink(String shortLink) {
+            // TODO Auto-generated method stub
+            return null;
         }
+
+        public static String shortenLink(String originalLink) {
+            // TODO Auto-generated method stub
+            return null;
+        }
+    }
         public static void main(String[] args) {
         GroupSixServices manager = new GroupSixServices();
         Scanner scanner = new Scanner(System.in);
@@ -99,7 +111,8 @@ public class GroupSixServices {
                     "\n2: Hotel Guest Record Manager!"
                     + "\n3: Word Search"
                     + "\n4: Armstrong"
-                    + "\n5: Link Shortner");
+                    + "\n5: Link Shortner"
+                    + "\n0: Terminate");
             System.out.print("\nChoice: " );
             choice = scanner.nextInt();
             switch (choice) {
@@ -129,7 +142,8 @@ public class GroupSixServices {
                         System.out.println("\n1: Create A Guest Record" +
                                 "\n2: Update Existed user" +
                                 "\n3: Delete User " +
-                                "\n4: Display User");
+                                "\n4: Display User//"
+                                + "\n0: Terminate");
                         System.out.print("\nChoice: " );
                         choice = scanner.nextInt();
                         switch (choice) {
@@ -172,6 +186,7 @@ System.out.print("\nNumber of People: ");
                                 // Display all guest records
                                 manager.displayAllGuestRecords();
 
+                                break;
                         }
                         
                     }while (choice!=0);
@@ -214,7 +229,7 @@ System.out.print("\nNumber of People: ");
                 	break; 
              
                 case 5:
-                    public static void main(String[] args) {
+
                     LinkShortener linkShortener = new LinkShortener();
 
                     String longUrl = "https://www.google.com";
@@ -222,8 +237,8 @@ System.out.print("\nNumber of People: ");
                     System.out.println("Shortened URL: " + shortUrl);
 
                     String expandedUrl = linkShortener.expand(shortUrl);
-                    System.out.println("Expanded URL  : " + expandedUrl);
-                }
+                    System.out.println("Expanded URL: " + expandedUrl);
+           
                   
             }
 

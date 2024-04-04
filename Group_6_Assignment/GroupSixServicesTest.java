@@ -2,7 +2,9 @@ package Group_6_Assignment;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import Group_6_Assignment.GroupSixServices.LinkShortener;
 
 class GroupSixServicesTest {
 
@@ -27,7 +29,7 @@ class GroupSixServicesTest {
 	    	GroupSixServices manager = new GroupSixServices();
 	        manager.createGuestRecord(1, "Abebe Mare");
 	        manager.deleteGuestRecord(1);
-	        assertEquals("Guest not  found", manager.readGuestRecord(1));
+	        assertEquals("Guest not found", manager.readGuestRecord(1));
 	    }
 	    
       @Test
@@ -53,59 +55,50 @@ class GroupSixServicesTest {
 
           // Additional test cases can be added here
     }
-} 
+    
+    
     @Test
     public void testTranslateToPigLatinStartingWithVowel() {
-        String translated = HotelGuestRecordManager.translateToPigLatin("apple");
+        String translated = GroupSixServices.translateToPigLatin("apple");
         assertEquals("appleway", translated);
     }
 
     @Test
     public void testTranslateToPigLatinStartingWithConsonant() {
-        String translated = HotelGuestRecordManager.translateToPigLatin("hello");
+        String translated = GroupSixServices.translateToPigLatin("hello");
         assertEquals("ellohay", translated);
     }
     @Test
     public void testIsVowel() {
-        boolean result1 = HotelGuestRecordManager.isVowel('a');
-        boolean result2 = HotelGuestRecordManager.isVowel('b');
+        boolean result1 = GroupSixServices.isVowel('a');
+        boolean result2 = GroupSixServices.isVowel('b');
 
         assertEquals(true, result1);
         assertEquals(false, result2);
     }
     
-    @Test
-    void testShortenUrl() {
-        LinkShortener linkShortener = new LinkShortener();
 
-        // Test case for a valid URL
-        String originalUrl = "https://www.example.com";
-        String shortUrl = linkShortener.shortenUrl(originalUrl);
-        assertNotNull(shortUrl);
-        assertNotEquals(originalUrl, shortUrl);
 
-        // Test case for an empty URL
-        String emptyUrl = "";
-        assertThrows(IllegalArgumentException.class, () -> linkShortener.shortenUrl(emptyUrl));
+    private LinkShortener linkShortener;
 
-        // Additional test cases can be added here
+    @BeforeEach
+    void setUp() {
+        linkShortener = new LinkShortener();
     }
 
     @Test
-    void testExpandUrl() {
-        LinkShortener linkShortener = new LinkShortener();
+    void testShortenAndExpand() {
+        String longUrl = "https://www.example.com";
+        String shortUrl = linkShortener.shorten(longUrl);
 
-        // Test case for expanding a shortened URL
-        String originalUrl = "https://www.example.com";
-        String shortUrl = linkShortener.shortenUrl(originalUrl);
-        String expandedUrl = linkShortener.expandUrl(shortUrl);
-        assertEquals(originalUrl, expandedUrl);
+        assertEquals(longUrl, linkShortener.expand(shortUrl));
+    }
 
-        // Test case for expanding an invalid shortened URL
-        String invalidShortUrl = "invalid-short-url";
-        assertThrows(IllegalArgumentException.class, () -> linkShortener.expandUrl(invalidShortUrl));
+    @Test
+    void testExpandNonexistentShortUrl() {
+        String nonexistentShortUrl = "nonexistent";
+        String expectedMessage = "Short URL not found.";
 
-        // Additional test cases can be adde
-        
-        
+        assertEquals(expectedMessage, linkShortener.expand(nonexistentShortUrl));
+    } 
 }
